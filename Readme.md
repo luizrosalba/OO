@@ -380,10 +380,174 @@ Usage of Bridge Pattern
 - It is mostly used in those places where changes are made in the implementation does not affect the clients.
 
 
-https://www.javatpoint.com/bridge-pattern - falta figura 
+https://www.javatpoint.com/bridge-pattern 
 
+### Composite 
+
+A Composite Pattern says that just "allow clients to operate in generic manner 
+on objects that may or may not represent a hierarchy of objects".
+
+Advantage of Composite Design Pattern
+
+- It defines class hierarchies that contain primitive and complex objects.
+- It makes easier to you to add new kinds of components.
+- It provides flexibility of structure with manageable class or interface.
+Usage of Composite Pattern :
+
+- When you want to represent a full or partial hierarchy of objects.
+- When the responsibilities are needed to be added dynamically 
+to the individual objects without affecting other objects. Where the responsibility 
+of object may vary from time to time.
 
 ### Decorator 
+
+A Decorator Pattern says that just "attach a flexible additional responsibilities 
+to an object dynamically".
+
+In other words, The Decorator Pattern uses composition instead of inheritance 
+to extend the functionality of an object at runtime.
+
+The Decorator Pattern is also known as Wrapper.
+
+Advantage of Decorator Pattern
+
+- It provides greater flexibility than static inheritance.
+- It enhances the extensibility of the object, because changes are made by coding new classes.
+- It simplifies the coding by allowing you to develop a series of functionality from targeted classes instead of coding all of the behavior into the object.
+
+Usage of Decorator Pattern
+
+- When you want to transparently and dynamically add responsibilities to objects without affecting other objects.
+- When you want to add responsibilities to an object that you may want to change in future.
+- Extending functionality by sub-classing is no longer practical.
+
+### Facade 
+
+A Facade Pattern says that just "just provide a unified and simplified interface 
+to a set of interfaces in a subsystem, therefore it hides the complexities of the 
+subsystem from the client".
+
+In other words, Facade Pattern describes a higher-level interface 
+that makes the sub-system easier to use.
+
+Practically, every Abstract Factory is a type of Facade.
+
+Advantage of Facade Pattern
+
+- It shields the clients from the complexities of the sub-system components.
+- It promotes loose coupling between subsystems and its clients.
+
+Usage of Facade Pattern:
+
+- When you want to provide simple interface to a complex sub-system.
+- When several dependencies exist between clients and the implementation classes of an abstraction.
+
+### Flyweigth 
+
+A Flyweight Pattern says that just "to reuse already existing similar 
+kind of objects by storing them and create new object when no matching object is found".
+
+Advantage of Flyweight Pattern
+
+- It reduces the number of objects.
+- It reduces the amount of memory and storage devices required if the objects are persisted
+
+Usage of Flyweight Pattern
+
+- When an application uses number of objects
+- When the storage cost is high because of the quantity of objects.
+- When the application does not depend on object identity.
+
+### Proxy 
+
+Simply, proxy means an object representing another object.
+
+According to GoF, a Proxy Pattern "provides the control for accessing the original object".
+
+So, we can perform many operations like hiding the information of original object, 
+on demand loading etc.
+
+Proxy pattern is also known as Surrogate or Placeholder.
+
+Advantage of Proxy Pattern
+
+It provides the protection to the original object from the outside world.
+
+Usage of Proxy Pattern:
+
+- It can be used in Virtual Proxy scenario---Consider a situation where there is multiple database call to extract huge size image. Since this is an expensive operation so here we can use the proxy pattern which would create multiple proxies and point to the huge size memory consuming object for further processing. The real object gets created only when a client first requests/accesses the object and after that we can just refer to the proxy to reuse the object. This avoids duplication of the object and hence saving memory.
+- It can be used in Protective Proxy scenario---It acts as an authorization layer to verify that whether the actual user has access the appropriate content or not. For example, a proxy server which provides restriction on internet access in office. Only the websites and contents which are valid will be allowed and the remaining ones will be blocked.
+- It can be used in Remote Proxy scenario---A remote proxy can be thought about the stub in the RPC call. The remote proxy provides a local representation of the object which is present in the different address location. Another example can be providing interface for remote resources such as web service or REST resources.
+- It can be used in Smart Proxy scenario---A smart proxy provides additional layer of security by interposing specific actions when the object is accessed. For example, to check whether the real object is locked or not before accessing it so that no other objects can change it.
+
+## 3) Behavioral
+
+### Chain of responsability 
+
+In chain of responsibility, sender sends a request to a chain of objects. 
+The request can be handled by any object in the chain.
+
+A Chain of Responsibility Pattern says that just 
+"avoid coupling the sender of a request to its receiver by 
+giving multiple objects a chance to handle the request". 
+For example, an ATM uses the Chain of Responsibility design pattern in money giving process.
+
+In other words, we can say that normally each receiver contains 
+reference of another receiver. If one object cannot handle the request 
+then it passes the same to the next receiver and so on.
+
+Advantage of Chain of Responsibility Pattern
+
+- It reduces the coupling.
+- It adds flexibility while assigning the responsibilities to objects.
+- It allows a set of classes to act as one; events produced in one class can be sent to other handler classes with the help of composition.
+
+Usage of Chain of Responsibility Pattern:
+
+- When more than one object can handle a request and the handler is unknown.
+- When the group of objects that can handle the request must be specified in dynamic way.
+
+### Command 
+
+A Command Pattern says that "encapsulate a request under an object as a
+command and pass it to invoker object. Invoker object looks for the appropriate 
+object which can handle this command and pass the command to the corresponding object 
+and that object executes the command".
+
+It is also known as Action or Transaction.
+
+Advantage of command pattern
+
+- It separates the object that invokes the operation from the object that actually performs the operation.
+- It makes easy to add new commands, because existing classes remain unchanged.
+
+Usage of command pattern:
+
+- When you need parameterize objects according to an action perform.
+- When you need to create and execute requests at different times.
+- When you need to support rollback, logging or transaction functionality.
+
+### Interpreter 
+
+An Interpreter Pattern says that "to define a representation of grammar of a given language, 
+along with an interpreter that uses this representation to interpret sentences in the language".
+
+Basically the Interpreter pattern has limited area where it can be applied. 
+We can discuss the Interpreter pattern only in terms of formal grammars but in 
+this area there are better solutions that is why it is not frequently used.
+
+This pattern can applied for parsing the expressions defined in simple grammars 
+and sometimes in simple rule engines.
+
+Advantage of Interpreter Pattern
+
+- It is easier to change and extend the grammar.
+- Implementing the grammar is straightforward.
+
+Usage of Interpreter pattern:
+
+- When the grammar of the language is not complicated.
+- When the efficiency is not a priority.
 
 
 
