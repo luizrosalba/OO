@@ -218,10 +218,122 @@ To create the singleton class, we need to have static member of class, private c
 - Private constructor: It will prevent to instantiate the Singleton class from outside the class.
 - Static factory method: This provides the global point of access to the Singleton object and returns the instance to the caller.
 
+Understanding early Instantiation of Singleton Pattern
+
+In such case, we create the instance of the class at the time of declaring the static data member, so instance of the class is created at the time of classloading.
+
+Let's see the example of singleton design pattern using early instantiation.
+
+```
+class A{  
+    private static A obj=new A();//Early, instance will be created at load time  
+    private A(){}  
+    
+    public static A getA(){  
+    return obj;  
+    }  
+    
+    public void doSomething(){  
+    //write your code  
+    }  
+}  
+```
+
+Understanding lazy Instantiation of Singleton Pattern
+
+In such case, we create the instance of the class in synchronized method or synchronized block, so instance of the class is created when required.
+
+Let's see the simple example of singleton design pattern using lazy instantiation.
+
+```
+class A{  
+ private static A obj;  
+ private A(){}  
+   
+ public static A getA(){  
+   if (obj == null){  
+      synchronized(Singleton.class){  
+        if (obj == null){  
+            obj = new Singleton();//instance will be created at request time  
+        }  
+    }              
+    }  
+  return obj;  
+ }  
+  
+ public void doSomething(){  
+ //write your code  
+ }  
+}  
+```
+
+### Prototype 
+
+Prototype Pattern says that cloning of an existing object instead of creating new 
+one and can also be customized as per the requirement.
+
+This pattern should be followed, if the cost of creating a new object is expensive and resource intensive.
+
+Advantage of Prototype Pattern
+
+The main advantages of prototype pattern are as follows:
+
+- It reduces the need of sub-classing.
+- It hides complexities of creating objects.
+- The clients can get new objects without knowing which type of object it will be.
+- It lets you add or remove objects at runtime.
+
+Usage of Prototype Pattern
+
+- When the classes are instantiated at runtime.
+- When the cost of creating an object is expensive or complicated.
+- When you want to keep the number of classes in an application minimum.
+- When the client application needs to be unaware of object creation and representation.
 
 
+### Builder 
+
+Builder Pattern says that "construct a complex object from simple objects using step-by-step approach"
+
+It is mostly used when object can't be created in single step like in the de-serialization of a complex object.
+
+Advantage of Builder Design Pattern
+
+The main advantages of Builder Pattern are as follows:
+
+- It provides clear separation between the construction and representation of an object.
+- It provides better control over construction process.
+- It supports to change the internal representation of objects.
+
+### Object Pool 
+
+Mostly, performance is the key issue during the software development and the object creation, which may be a costly step.
+
+Object Pool Pattern says that " to reuse the object that are expensive to create".
+
+Basically, an Object pool is a container which contains a specified amount of objects. 
+When an object is taken from the pool, it is not available in the pool until it is put back. 
+Objects in the pool have a lifecycle: creation, validation and destroy.
+
+A pool helps to manage available resources in a better way. 
+There are many using examples: especially in application servers there are data source pools, 
+thread pools etc.
+
+Advantage of Object Pool design pattern
+
+- It boosts the performance of the application significantly.
+- It is most effective in a situation where the rate of initializing a class instance is high.
+- It manages the connections and provides a way to reuse and share them.
+- It can also provide the limit for the maximum number of objects that can be created.
+
+Usage:
+
+- When an application requires objects which are expensive to create. Eg: there is a need of opening too many connections for the database then it takes too longer to create a new one and the database server will be overloaded.
+- When there are several clients who need the same resource at different times.
 
 ### Decorator 
+
+
 
 ### Observer
 
