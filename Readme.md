@@ -112,16 +112,121 @@ double valor = nf.calculaValorImpostos();
 
 pág 70
 
-## Padrões de projeto 
+## Padrões de projeto - Design Patterns 
+
+A design patterns are well-proved solution for solving the specific problem/task. (https://www.javatpoint.com/design-patterns-in-java)
+
+1) Creational 
+2) Structural
+3) Behavioral
+
+## 1 - Creational 
+
+### Factory 
+
+Problem: Suppose you want to create a class for which only 
+a single instance (or object) should be created and that single object can be used by all other classes.
+
+
+A Factory Pattern or Factory Method Pattern says that just define an interface or abstract class for creating an object but let the subclasses decide 
+which class to instantiate. In other words, subclasses are responsible to create the instance of the class.
+
+The Factory Method Pattern is also known as Virtual Constructor.
+
+Advantage of Factory Design Pattern
+
+Factory Method Pattern allows the sub-classes to choose the type of objects to create.
+
+It promotes the loose-coupling by eliminating the need to bind application-specific classes into the code. 
+That means the code interacts solely with the resultant interface or abstract class, 
+so that it will work with any classes that implement that interface or that extends that abstract class.
+
+Usage of Factory Design Pattern
+
+- When a class doesn't know what sub-classes will be required to create
+- When a class wants that its sub-classes specify the objects to be created.
+- When the parent classes choose the creation of objects to its sub-classes.
+
+```
+class DogFactory
+{
+  public static Dog getDog(String criteria)
+  {
+    if ( criteria.equals("small") )
+      return new Poodle();
+    else if ( criteria.equals("big") )
+      return new Rottweiler();
+    else if ( criteria.equals("working") )
+      return new SiberianHusky();
+
+    return null;
+  }
+}
+```
+
+The factory doesn’t say it's returning a Poodle, Rottweiler, or SiberianHusky — 
+it just says it's returning something that implements the Dog interface.
+
+### Abstract Factory
+
+Abstract Factory Pattern says that just define an interface or abstract class 
+for creating families of related (or dependent) objects but without specifying their 
+concrete sub-classes.That means Abstract Factory lets a class returns a factory of classes. 
+So, this is the reason that Abstract Factory Pattern is one level higher than the Factory Pattern.
+
+An Abstract Factory Pattern is also known as Kit.
+
+Advantage of Abstract Factory Pattern
+
+- Abstract Factory Pattern isolates the client code from concrete (implementation) classes.
+- It eases the exchanging of object families.
+- It promotes consistency among objects.
+
+Usage of Abstract Factory Pattern
+
+- When the system needs to be independent of how its object are created, composed, and represented.
+- When the family of related objects has to be used together, then this constraint needs to be enforced.
+- When you want to provide a library of objects that does not show implementations and only reveals interfaces.
+- When the system needs to be configured with one of a multiple family of objects.
+
+
+### Singleton 
+
+Singleton Pattern says that just"define a class that has only one instance and provides a global point of access to it".
+
+In other words, a class must ensure that only single instance should be created and single object can be used by all other classes.
+
+There are two forms of singleton design pattern
+
+Early Instantiation: creation of instance at load time.
+
+Lazy Instantiation: creation of instance when required.
+
+Advantage of Singleton design pattern
+
+    Saves memory because object is not created at each request. Only single instance is reused again and again.
+
+Usage of Singleton design pattern
+
+Singleton pattern is mostly used in multi-threaded and database applications. It is used in logging, caching, thread pools, configuration settings etc.
+
+How to create Singleton design pattern?
+
+To create the singleton class, we need to have static member of class, private constructor and static factory method.
+
+- Static member: It gets memory only once because of static, itcontains the instance of the Singleton class.
+- Private constructor: It will prevent to instantiate the Singleton class from outside the class.
+- Static factory method: This provides the global point of access to the Singleton object and returns the instance to the caller.
+
+
 
 
 ### Decorator 
 
 ### Observer
 
-### Visitor 
 
-### Factory 
+### Visitor 
 
 
 
