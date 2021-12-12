@@ -610,13 +610,72 @@ Undo or backspace or ctrl+z is one of the most used operation in an editor.
 Memento design pattern is used to implement the undo operation. 
 This is done by saving the current state of the object as it changes state.
 
-
-
-
 ### Observer
 
+An Observer Pattern says that "just define a one-to-one dependency so that when 
+one object changes state, all its dependents are notified and updated automatically".
 
-### Visitor 
+The observer pattern is also known as Dependents or Publish-Subscribe.
+
+Benefits:
+
+- It describes the coupling between the objects and the observer.
+- It provides the support for broadcast-type communication.
+
+Usage:
+
+- When the change of a state in one object must be reflected in another object without keeping the objects tight coupled.
+- sWhen the framework we writes and needs to be enhanced in future with new observers with minimal chamges.
+
+### State 
+
+A State Pattern says that "the class behavior changes based on its state". 
+In State Pattern, we create objects which represent various states and 
+a context object whose behavior varies as its state object changes.
+
+The State Pattern is also known as Objects for States.
+
+Benefits:
+
+- It keeps the state-specific behavior.
+- It makes any state transitions explicit.
+
+Usage:
+
+- When the behavior of object depends on its state and it must be able to change its behavior at runtime according to the new state.
+- It is used when the operations have large, multipart conditional statements that depend on the state of an object.
+
+### Strategy 
+
+A Strategy Pattern says that "defines a family of functionality, encapsulate each one, 
+and make them interchangeable".
+
+The Strategy Pattern is also known as Policy.
+
+Benefits:
+
+- It provides a substitute to subclassing.
+- It defines each behavior within its own class, eliminating the need for conditional statements.
+- It makes it easier to extend and incorporate new behavior without changing the application.
+
+Usage:
+
+- When the multiple classes differ only in their behaviors.e.g. Servlet API.
+- It is used when you need different variations of an algorithm.
+
+
+### Template 
+
+A Template Pattern says that "just define the skeleton of a function in an operation, 
+deferring some steps to its subclasses".
+
+Benefits:
+
+- It is very common technique for reusing the code.This is only the main benefit of it.
+
+Usage:
+
+- It is used when the common behavior among sub-classes should be moved to a single common class by avoiding the duplication.
 
 
 
