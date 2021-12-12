@@ -1,4 +1,8 @@
-# Orientação a Objetos e Solid para ninjas 
+# Orientação a Objetos e Solid para ninjas - Design Patterns
+
+Meus estudos usando o livro Orientação a Objetos e Solid para ninjas. 
+
+Exemplos de Design Patterns do site https://www.javatpoint.com/
 
 ## Coesão 
 
@@ -113,6 +117,8 @@ double valor = nf.calculaValorImpostos();
 pág 70
 
 ## Padrões de projeto - Design Patterns 
+
+https://www.javatpoint.com/
 
 A design patterns are well-proved solution for solving the specific problem/task. (https://www.javatpoint.com/design-patterns-in-java)
 
@@ -330,6 +336,30 @@ Usage:
 
 - When an application requires objects which are expensive to create. Eg: there is a need of opening too many connections for the database then it takes too longer to create a new one and the database server will be overloaded.
 - When there are several clients who need the same resource at different times.
+
+## 2) Structural Pattern
+
+### Adapter 
+
+An Adapter Pattern says that just "converts the interface of a class into another interface that a client wants".
+
+In other words, to provide the interface according to client requirement 
+while using the services of a class with a different interface.
+
+The Adapter Pattern is also known as Wrapper.
+
+Advantage of Adapter Pattern
+
+- It allows two or more previously incompatible objects to interact.
+- It allows reusability of existing functionality.
+
+Usage of Adapter pattern:
+
+It is used:
+
+- When an object needs to utilize an existing class with an incompatible interface.
+- When you want to create a reusable class that cooperates with classes which don't have compatible interfaces.
+
 
 ### Decorator 
 
